@@ -1,12 +1,11 @@
-#Webscraper to get my image from my personal website(All these are just local for now) Using BeautifulSoup
+#Webscraper to get my image from my personal website Using BeautifulSoup
 
 from urllib.request import urlopen
 from bs4 import BeautifulSoup as soup
-import re
 
 html = urlopen("file:///C:/Users/hp/Documents/Sound%20recordings/wonah/index.html")
 my_url = (html.read())
-print(my_url)
+#print(my_url)
 
 bs = soup(my_url, 'html.parser')
 
@@ -20,6 +19,6 @@ print(image.attrs['width'])
 
 #Using Lambda functions in webscraping
 
-only2 = bs.find_all(lambda  tag: len(tag.attrs) == 5)
+only2 = bs.find_all(lambda tag: len(tag.attrs) == 3)
 
 print(only2)

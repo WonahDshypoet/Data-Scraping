@@ -1,12 +1,20 @@
+'''Using Regular Expression to get image src ending with png from website'''
+
 from urllib.request import urlopen
-from bs4 import BeautifulSoup as soup
+from bs4 import BeautifulSoup
 import re
 
+master_list = []
+
 html = urlopen("file:///C:/Users/hp/Documents/Sound%20recordings/wonah/index.html")
-#bs = soup(html, 'html.parser')
 
-my_url = soup(html.read, 'html.parser')
-print(my_url)
+soup = BeautifulSoup(html, 'html.parser')
 
-my = 2+2
-print(my)
+#print(soup)
+
+images = soup.findAll('img', {'src': re.compile('image\/[A-Za-z0-9]*\.png')})
+
+for image in images:
+    master_list.append(image)
+
+print(master_list)
