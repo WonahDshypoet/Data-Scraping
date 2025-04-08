@@ -3,7 +3,7 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup as soup
 
-html = urlopen("file:///C:/Users/hp/Documents/Sound%20recordings/wonah/index.html")
+html = urlopen("file:///C:/Users/ASUS/Documents/wonah/wonah-web-developer/index.html")
 my_url = (html.read())
 #print(my_url)
 

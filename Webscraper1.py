@@ -6,13 +6,13 @@ import re
 
 master_list = []
 
-html = urlopen("file:///C:/Users/hp/Documents/Sound%20recordings/wonah/index.html")
+html = urlopen("file:///C:/Users/ASUS/Documents/wonah/wonah-web-developer/index.html")
 
 soup = BeautifulSoup(html, 'html.parser')
 
 #print(soup)
 
-images = soup.findAll('img', {'src': re.compile('image\/[A-Za-z0-9]*\.png')})
+images = soup.find('img', {'src': re.compile('image\/[A-Za-z0-9]*\.png')})
 
 for image in images:
     master_list.append(image)
